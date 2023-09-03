@@ -179,6 +179,26 @@ class UserController {
     }
   }
 
+  static async getClientIdGoogle(req, res, next) {
+    try {
+      const result = {
+        meta: {
+          status: "Success",
+          code: 200,
+          msg: "Successfully getClientId",
+          data: new Date(),
+        },
+        data: {
+          clientId: process.env.CLIENT_ID,
+        },
+        error: null,
+      };
+      res.status(200).json(result);
+    } catch (err) {
+      next(err);
+    }
+  }
+
   static async facebookLogin(req, res, next) {
     try {
       passport.authenticate("facebook-token", (error, user, info) => {

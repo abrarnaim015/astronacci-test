@@ -6,5 +6,6 @@ route.post("/login", UserController.login);
 route.post("/googlelogin", UserController.googleLogin);
 route.post("/facebooklogin", UserController.facebookLogin);
 route.put("/update/membership/type", UserController.updateMembershipType);
+route.get("/clientid", UserController.getClientIdGoogle);
 
 module.exports = route;
